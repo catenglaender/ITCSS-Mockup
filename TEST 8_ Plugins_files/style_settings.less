@@ -1,0 +1,185 @@
+// out: false
+
+/*
+* ITCSS Layer: Settings
+*/
+
+/* from variables.less */
+//== Main Colors
+//
+//## The Main Colors used in ILIAS along with their semantics
+//** For Standard Buttons, Main color used in various places, used to be @brand-primary
+@il-main-color: #4c6586;
+//** For Primary Buttons, used to point to interactions with a special importance, used to be @brand-secondary
+@il-secondary-color: #6ea03c;
+//** Used to indicate some success, used to be @brand-success
+@il-success-color: #6ea03c;
+//** Used to indicate some success, used to be @brand-info
+@il-info-color: #dcb496;
+//** Used to indicate some warning or to draw special focus to some element, used to be @brand-warning
+@il-warning-color: #B54F00;
+//** Used to indicate some warning or to draw special focus to some element, used to be @brand-danger
+@il-danger-color: #d00;
+
+//** Neutral Color for various Backgrounds, used to be @gray-dark and @il-neutral-color
+@il-neutral-color: #2c2c2c;
+//** Light version of the @il-neutral-color, used to be @gray-light
+@il-neutral-light-color: #737373;
+
+//** Base Border Color, e.g. applied to Meta Bar and Breadcrumbs in Default.
+@il-main-border-color: #dddddd;
+//** Darker version of Base Border Color. Used as e.g. Text Inputs.
+@il-main-border-dark-color: #757575;
+
+//** Base Background Color, e.g. applied to Meta Bar and Breadcrumbs in Default, but also to panels in main content area.
+@il-main-bg: white;
+//** Title area of various components such as Panels. Used as e.g. in containers as bg. Used to be @il-secondary-bg
+@il-main-dark-bg: #f9f9f9;
+//** Background of subelements like subforms. Used mainly on the main-dark-bg.
+@il-main-darker-bg: #f0f0f0;
+
+//** Currently used for several highlighting effects, such as hovering
+@il-highlight-bg: lighten(@il-main-color, 50%);
+
+//** Used to be @text-color. Can be used on all background colors.
+@il-text-color: #161616;
+//** Used if text is hovered in components such a Dropdowns
+@il-text-hover-color: darken(@il-text-color, 10%);
+//** Used e.g. for Bylines in Forms. Used to be @il-light-text-color. For accessibility reasons, the @il-text-color should only be used on the @il-main-bg.
+@il-text-light-color: lighten(@il-text-color, 35%);
+
+//** Used to be @link-color
+@il-link-color: @il-main-color;
+//** Used to be @link-hover-color
+@il-link-hover-color: darken(@il-link-color, 10%);
+
+//** Used to set focus on interactive elements for keyboard navigation.
+@il-focus-color: #0078D7;
+@il-focus-protection-color: #FFFFFF;
+
+//== Extended Colors
+//
+//## Extended Colors of ILIAS to be used to generate coloring for components like charts.
+
+//** Variant 1 of the extended color set in ILIAS
+@il-extended-color-1: #f3de2c;
+//** Variant 2 of the extended color set in ILIAS
+@il-extended-color-2: #d38000;
+//** Variant 3 of the extended color set in ILIAS
+@il-extended-color-3: #307C88;
+//** Variant 4 of the extended color set in ILIAS
+@il-extended-color-4: #86cb92;
+//** Variant 5 of the extended color set in ILIAS
+@il-extended-color-5: #ce73a8;
+//** Variant 6 of the extended color set in ILIAS
+@il-extended-color-6: #82639e;
+//** Variant 7 of the extended color set in ILIAS
+@il-extended-color-7: #9e7c7d;
+//** Variant 8 of the extended color set in ILIAS
+@il-extended-color-8: #f75e82;
+//** Variant 9 of the extended color set in ILIAS
+@il-extended-color-9: #ea4d54;
+
+//** Factor by witch a specific color variant is darkened in the standard coloring
+@il-extended-color-factor-standard: 0%;
+//** Factor by witch a specific color variant is lightened in the light coloring
+@il-extended-color-factor-light: 14%;
+//** Factor by witch a specific variant is lightened in the lighter coloring
+@il-extended-color-factor-lighter: 24%;
+//** Factor by witch a specific variant is darkened in the dark coloring
+@il-extended-color-factor-dark: 14%;
+//** Factor by witch a specific variant is darkened in the darker coloring
+@il-extended-color-factor-darker: 22%;
+
+//** Factor by witch text colored by a specific color variant in the standard coloring shown inside a background of this exact variant is lightened
+@il-extended-text-color-factor-standard: 30%;
+//** Factor by witch text colored by a specific color variant in the light coloring shown inside a background of this exact variant is darkened
+@il-extended-text-color-factor-light: 17%;
+//** Factor by witch text colored by a specific color variant in the lighter coloring shown inside a background of this exact variant is darkened
+@il-extended-text-color-factor-lighter: 15%;
+//** Factor by witch text colored by a specific color variant in the dark coloring shown inside a background of this exact variant is lightened
+@il-extended-text-color-factor-dark: 40%;
+//** Factor by witch text colored by a specific color variant in the darker coloring shown inside a background of this exact variant is lightened
+@il-extended-text-color-factor-darker: 60%;
+
+//== Typography
+//
+//##
+
+//** if left unchanged, you have to copy delos fonts folder to your skin folder. To use the delos fonts in your skin, please change this value (in custom less data or variables.less of your custom skin) to "../../../../templates/default/fonts/"
+@il-web-font-path: "fonts/";
+@il-font-family-sans-serif: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+
+//** Used to calculate pixel to rem
+@il-pixel-to-rem: 1/16;
+//** Should only be used to indicate mainbar entries. Equivalent to 10px => 10*1/16=0.625rem.
+@il-font-size-xsmall:		0.625rem;
+//** Used to indicate subordinate text, such as bylines in forms, subtabs, etc. Equivalent to 12px.
+@il-font-size-small:		0.75rem;
+//** Default font size. Also used for h5. Equivalent to 14px.
+@il-font-size-base:		  0.875rem;
+//** Used to indicate h4. Equivalent to 16px.
+@il-font-size-large:		1rem;
+//** Used to indicate h3. Equivalent to 18px.
+@il-font-size-xlarge:    1.115rem;
+//** Used to indicate h2. Equivalent to 24px.
+@il-font-size-xxlarge:    1.5rem;
+//** Used to indicate h1. Should only used one time per screen. Equivalent to 28px.
+@il-font-size-h1:    1.75rem;
+
+//** Unit-less `line-height` for use in components like buttons.
+@il-line-height-base:		1.428571429;
+@il-line-height-computed:    unit(floor(((unit(@il-font-size-base)/@il-pixel-to-rem) * @il-line-height-base)),px); // ~20px
+
+
+//== Base Padding and Border
+//
+//## Define common padding, margin and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+@il-padding-base: 9px;
+
+@il-padding-base-vertical: 3px;
+@il-padding-base-horizontal: @il-padding-base;
+
+@il-padding-large-vertical: 6px;
+@il-padding-large-horizontal: 12px;
+
+@il-padding-xlarge-vertical: 9px;
+@il-padding-xlarge-horizontal: 15px;
+
+@il-padding-xxlarge-vertical: 12px;
+@il-padding-xxxlarge-vertical: 15px;
+
+@il-padding-small-vertical: 3px;
+@il-padding-small-horizontal: 6px;
+
+@il-padding-xs-vertical: 1px;
+@il-padding-xs-horizontal: 3px;
+
+@il-margin-base: @il-padding-base;
+@il-margin-base-vertical: @il-padding-base-vertical;
+@il-margin-base-horizontal: @il-padding-base-horizontal;
+
+@il-margin-large-vertical: @il-padding-large-vertical;
+@il-margin-large-horizontal: @il-padding-large-horizontal;
+
+@il-margin-xlarge-vertical: @il-padding-xlarge-vertical;
+@il-margin-xlarge-horizontal: @il-padding-xlarge-horizontal;
+
+@il-margin-xxlarge-vertical: @il-padding-xxlarge-vertical;
+@il-margin-xxxlarge-vertical: @il-padding-xxxlarge-vertical;
+
+@il-margin-small-vertical: @il-padding-small-vertical;
+@il-margin-small-horizontal: @il-padding-small-horizontal;
+
+@il-margin-xs-vertical: @il-padding-xs-vertical;
+@il-margin-xs-horizontal: @il-padding-xs-horizontal;
+
+@il-border-radius-base: 0px;
+@il-border-radius-large: 0px;
+@il-border-radius-small: 0px;
+
+@il-focus-outline-inner: @il-focus-outline-inner-width solid @il-focus-color;
+@il-focus-outline-outer: @il-focus-outline-outer-width solid @il-focus-protection-color;
+// The offset should only be used if the contrast between the focus outline and the component is insufficient.
+@il-focus-outline-inner-width: 3px;
+@il-focus-outline-outer-width: 2px;

@@ -1,0 +1,27 @@
+// out: false
+
+/*
+* Layer: Normalize
+*/
+
+/* from delos.less */
+// Reset and dependencies
+@import "@{bsbase}normalize.less";
+
+html, body {
+	height:100%;
+	overflow: hidden;
+}
+html {
+	font-size: 100%;
+	@media only screen and (max-width: @grid-float-breakpoint-max) {
+		-webkit-text-size-adjust: none;
+	}
+}
+html, body {
+	@media only screen and (max-width: @grid-float-breakpoint-max) {
+		overflow: initial;
+		height: auto;
+		min-height: 100vh;
+	}
+}
